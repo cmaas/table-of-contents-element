@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table of Contents – Test Page</title>
+    <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Table of Contents – Test Page</h1>
+        This is a test page for the table of contents generator. Above is an h1-headline, which can be ignored with the right selector.
+    </header>
+    <article>
+        <h1>A nice demo article</h1>
+        <p>Usually, there is a small intro. The table of contents comes next.</p>
+        <h2>How was this created?</h2>
+        <p>Check the sources to find out!</p>
+
+        <table-of-contents selector="article h1, article h2, article h3, article h4">
+            <details>
+                <summary>Table of Contents</summary>
+                <div data-toc-render-target></div>
+            </details>
+        </table-of-contents>
+        <hr>
+        <table-of-contents selector="article h2, article h3, article h4" listtype="ol"></table-of-contents>
+        <hr>
+        <table-of-contents selector="h2, h3, h4">
+            <header>Header of TOC</header>
+            <div data-toc-render-target></div>
+            <footer>Footer of TOC</footer>
+        </table-of-contents>
+        <hr>
+        3:
+        <table-of-contents>
+            <header>Table of Contents</header>
+        </table-of-contents>
+
+        <div style="background-color: lightyellow;" class="announcement">
+            <h4>This h4 is an important announcement</h4>
+            <p>We want this headline in the TOC for testing purposes to see that headlines do not need to be ordered from h1-h4, but can come in unexpected ways.</p>
+        </div>
+
+        <div style="background-color: lightblue;" class="sponsor-message">
+            <h4>This is an h4</h4>
+        </div>
+
+        <h2>Sub1</h2>
+        <h3>Subsub1-1</h3>
+        <h3>Subsub1-2</h3>
+        <h2>Sub2</h2>
+        <h3>Subsub2-1</h3>
+        <h3>Subsub2-2</h3>
+        <h2 class="test">Sub3</h2>
+    </article>
+    <script type="module">
+const slugify = function (s) {
+    return encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+};
+
+document.querySelectorAll('h1, h2, h3, h4').forEach(item => {
+    item.id = slugify(item.innerText)
+});
+
+window.setTimeout(
+    () => {
+        document.getElementsByTagName('article')[0].appendChild(document.createElement('h2')).innerText = 'Added later';
+        const tocs = document.getElementsByTagName('table-of-contents');
+        Array.from(tocs).forEach(toc => toc.render());
+    }, 500);
+
+window.setTimeout(
+    () => {
+        const toc = document.createElement('table-of-contents');
+        toc.setAttribute('selector', 'h2, h3, h4');
+        document.body.appendChild(toc);
+        /* const toc = new TableOfContents();
+        toc.setAttribute('selector', 'h2, h3, h4');
+        document.body.appendChild(toc); */
+    }, 1000);
+    </script>
+</body>
+
+</html>
