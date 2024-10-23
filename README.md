@@ -20,17 +20,17 @@ A lightweight **Table of contents** generator, distributed as a web component.
 
 Via npm:
 
-```
+```sh
 npm install table-of-contents-element
 ```
 
-```
+```js
 import 'table-of-contents-element';
 ```
 
 Or as a `<script>` tag:
 
-```
+```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/table-of-contents-element/index.js"></script>
 ```
 
@@ -83,7 +83,7 @@ You can give any child element an attribute called `data-toc-render-target` to s
 
 Or add a `<header>` and `<footer>` to your table of contents:
 
-```
+```html
 <table-of-contents>
     <header>Table of contents</header>
     <div data-toc-render-target></div>
@@ -93,7 +93,7 @@ Or add a `<header>` and `<footer>` to your table of contents:
 
 If you do not provide an attribute `data-toc-render-target`, the generated list will be added as the last child:
 
-```
+```html
 <table-of-contents>
     <header>Table of contents</header>
     <!-- toc list will be placed here -->
