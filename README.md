@@ -53,7 +53,7 @@ Including the script automatically defines the custom element.
 #### Custom headline selector:
 
 ```html
-<table-of-contents selector="article h2, article h3:not(.newsletter-signup)></table-of-contents>
+<table-of-contents selector="article h2, article h3:not(.newsletter-signup)"></table-of-contents>
 ```
 
 Or target only headlines that have an `id` attribute:
