@@ -2,7 +2,14 @@
     "name": "table-of-contents-element",
     "version": "1.0.0",
     "description": "A lightweight zero-dependency Table of Contents generator, distributed as a web component",
-    "keywords": ["table-of-contents", "toc", "table-of-contents-generator", "toc-generator", "webcomponents", "web-components"],
+    "keywords": [
+        "table-of-contents",
+        "toc",
+        "table-of-contents-generator",
+        "toc-generator",
+        "webcomponents",
+        "web-components"
+    ],
     "license": "MIT",
     "author": "Christian Maas",
     "repository": "github:cmaas/table-of-contents-element",

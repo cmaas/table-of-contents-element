@@ -1,4 +1,3 @@
-//@ts-check
 /**
  * @typedef {Object} HeadlineItem
  * @property {number} level Headline level
@@ -70,7 +69,7 @@ function flatHeadlineItemsToNestedTree(headlineItems) {
     headlineItems.forEach(headlineItem => {
         if (headlineItem.level > prevListItem.level) {
             console.log('level up', headlineItem.text, currentRootNode.text, headlineItem.level - prevListItem.level);
-            Array.from({ length: headlineItem.level - prevListItem.level }).forEach(_ => {
+            Array.from({ length: headlineItem.level - prevListItem.level }).forEach(() => {
                 currentRootNode = prevListItem;
                 prevListItem = addListItem(headlineItem.level, null, null, currentRootNode);
             });

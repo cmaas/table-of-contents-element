@@ -70,7 +70,7 @@ Or target only headlines that have an `id` attribute:
 
 #### Wrap the list in custom HTML:
 
-You can give any child element an attribute called `data-toc-render-target` to specify where the list items should be rendered. This way, you can wrap the table of contents in a `<detail>` tag:
+You can give any child element an attribute called `data-toc-render-target` to specify where the list items should be rendered. This way, you can wrap the table of contents in a `<details>` tag:
 
 ```html
 <table-of-contents>
