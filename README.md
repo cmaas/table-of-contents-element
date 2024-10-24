@@ -16,6 +16,8 @@ A lightweight **Table of contents** generator, distributed as a web component.
 * Can be provided with custom HTML to add a header, footer or wrap the entire list in a `<details>` tag (see Examples)
 * Zero-dependencies
 
+[Demo](https://cmaas.github.io/table-of-contents-element/test/)
+
 ## Usage
 
 Via npm:
