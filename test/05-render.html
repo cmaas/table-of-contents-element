@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table of Contents – Test Page</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script type="module" src="../index.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Table of Contents – Test Page</h1>
+        <p>Call render manually after the page structure changed.</p>
+    </header>
+    <article>
+        <h1>A nice demo article</h1>
+        <p>Call render manually after the page structure changed. This demo adds another headline after 1 second and re-renders the TOC.</p>
+
+        <table-of-contents selector="article h1, article h2, article h3, article div:not(.sponsor-message) h4">
+            <header>Table of contents</header>
+            <div data-toc-render-target></div>
+            <footer style="font-size:0.8rem">powered by <a href="https://github.com/cmaas/table-of-contents-element">table-of-contents-element</a></footer>
+        </table-of-contents>
+
+        <h2>How was this created?</h2>
+        <p>Check the source to find out!</p>
+        <p>Even nicer with links to headlines 😊</p>
+
+        <div style="background-color: lightyellow;" class="announcement">
+            <h4>This h4 is an important announcement</h4>
+            <p>We want this headline in the TOC for testing purposes to see that headlines do not need to be ordered
+                from h1-h4, but can come in unexpected ways.</p>
+        </div>
+
+        <div style="background-color: lightblue;" class="sponsor-message">
+            <h4>This h4 is for a sponsored message</h4>
+            <p>This should be excluded from the TOC generator I suppose</p>
+        </div>
+
+        <h2>Sub1</h2>
+        <h3>Subsub1-1</h3>
+        <h3>Subsub1-2</h3>
+        <h2>Sub2</h2>
+        <h3>Subsub2-1</h3>
+        <h3>Subsub2-2</h3>
+        <h2 class="test">Sub3</h2>
+    </article>
+    <script>
+        function slugify(s) {
+            return encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+        };
+        function setSlugs() {
+            document.querySelectorAll('h1, h2, h3, h4').forEach(item => {
+                item.id = slugify(item.innerText)
+            });
+        }
+
+        setSlugs();
+
+        window.setTimeout(() => {
+            document.getElementsByTagName('article')[0]
+                .appendChild(document.createElement('h2'))
+                .innerText = 'New headline, added later';
+            const toc = document.getElementsByTagName('table-of-contents')[0];
+            setSlugs();
+            toc.render();
+        }, 1000);
+    </script>
+</body>
+
+</html>
