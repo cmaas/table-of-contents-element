@@ -76,7 +76,7 @@ You can give any child element an attribute called `data-toc-render-target` to s
 <table-of-contents>
     <details>
         <summary>Table of contents</summary>
-        <div data-render-target></div>
+        <div data-toc-render-target></div>
     </details>
 </table-of-contents>
 ```
