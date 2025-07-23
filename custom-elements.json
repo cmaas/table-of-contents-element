@@ -1,43 +1,43 @@
 {
-    "schemaVersion": "1.0.0",
-    "readme": "",
-    "modules": [
-        {
-            "kind": "javascript-module",
-            "path": "index.js",
-            "declarations": [
-                {
-                    "kind": "class",
-                    "description": "",
-                    "name": "TableOfContents",
-                    "members": [
-                        {
-                            "kind": "field",
-                            "name": "#initialInnerHTML",
-                            "privacy": "private"
-                        },
-                        {
-                            "kind": "method",
-                            "name": "render"
-                        }
-                    ],
-                    "superclass": {
-                        "name": "HTMLElement"
-                    },
-                    "tagName": "table-of-contents",
-                    "customElement": true
-                }
-            ],
-            "exports": [
-                {
-                    "kind": "custom-element-definition",
-                    "name": "table-of-contents",
-                    "declaration": {
-                        "name": "TableOfContents",
-                        "module": "index.js"
-                    }
-                }
-            ]
-        }
-    ]
+	"schemaVersion": "1.0.0",
+	"readme": "",
+	"modules": [
+		{
+			"kind": "javascript-module",
+			"path": "index.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "",
+					"name": "TableOfContents",
+					"members": [
+						{
+							"kind": "field",
+							"name": "#initialInnerHTML",
+							"privacy": "private"
+						},
+						{
+							"kind": "method",
+							"name": "render"
+						}
+					],
+					"superclass": {
+						"name": "HTMLElement"
+					},
+					"tagName": "table-of-contents",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "custom-element-definition",
+					"name": "table-of-contents",
+					"declaration": {
+						"name": "TableOfContents",
+						"module": "index.js"
+					}
+				}
+			]
+		}
+	]
 }
